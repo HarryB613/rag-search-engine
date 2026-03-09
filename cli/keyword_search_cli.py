@@ -14,7 +14,7 @@ def main() -> None:
 
     match args.command:
         case "search":
-            print("keyword_search_cli.py")
+            print(f"Searching for: {args.query}")
             pass
         case _:
             parser.print_help()
