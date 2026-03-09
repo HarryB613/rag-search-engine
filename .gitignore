@@ -11,3 +11,4 @@ wheels/
 
 # User added ignores
 /data/
+uv.lock
