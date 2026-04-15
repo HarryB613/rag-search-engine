@@ -4,6 +4,7 @@ import argparse
 
 from lib.semantic_search import (
     chunk_text,
+    embed_chunks_command,
     embed_query_text,
     embed_text,
     semantic_chunk_text,
@@ -71,6 +72,10 @@ def main():
         help="Number of sentences to overlap between chunks",
     )
 
+    subparsers.add_parser(
+        "embed_chunks", help="Generate embeddings for chunked documents"
+    )
+
     args = parser.parse_args()
 
     match args.command:
@@ -88,6 +93,9 @@ def main():
             chunk_text(args.text, args.chunk_size, args.overlap)
         case "semantic_chunk":
             semantic_chunk_text(args.text, args.max_chunk_size, args.overlap)
+        case "embed_chunks":
+            embeddings = embed_chunks_command()
+            print(f"Generated {len(embeddings)} chunked embeddings")
         case _:
             parser.print_help()
 
