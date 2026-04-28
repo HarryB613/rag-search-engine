@@ -10,5 +10,6 @@ dependencies = [
   "nltk==3.9.1",
   "numpy>=2.3.3",
   "python-dotenv>=1.2.2",
+  "pillow>=11.3.0",
   "sentence-transformers==5.1.0",
 ]
